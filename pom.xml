@@ -8,7 +8,7 @@
     <description>Fullscreen toggling for Vaadin 10</description>
 
     <properties>
-        <vaadin.version>10.0.11</vaadin.version>
+        <vaadin.version>14.0.0.alpha3</vaadin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -44,13 +44,17 @@
         <!-- Repository needed for prerelease versions of Vaadin -->
         <repository>
             <id>Vaadin prereleases</id>
-            <url>http://maven.vaadin.com/vaadin-prereleases</url>
+            <url>https://maven.vaadin.com/vaadin-prereleases</url>
         </repository>
         <!-- The bintray repository contain webjars immediately after generation. If the webjar is available
              in Maven central, you do not need this repository -->
         <repository>
             <id>webjars</id>
             <url>https://dl.bintray.com/webjars/maven</url>
+        </repository>
+        <repository>
+            <id>Vaadin snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots</url>
         </repository>
     </repositories>
 
@@ -64,6 +68,13 @@
             <artifactId>slf4j-simple</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
