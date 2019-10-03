@@ -1,20 +1,22 @@
 package org.vaadin.olli;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 
 /**
  * A vaadin-button wrapper that can open or close fullscreen mode.
  */
 @Tag("fullscreen-button")
+@JsModule("./fullscreen-button.js")
 @HtmlImport("fullscreen-button.html")
 public class FullscreenButton extends PolymerTemplate<FullscreenButton.FullscreenButtonModel> {
 
-    @Id("fullscreen-vaadin--button")
+    @Id("fullscreen-vaadin-button")
     private Button fullscreenVaadinButton;
 
     /**
