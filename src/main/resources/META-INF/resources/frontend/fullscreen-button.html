@@ -3,14 +3,14 @@
 <script src="fullscreen.js"></script>
 <dom-module id="fullscreen-button">
     <template>
-<style include="shared-styles">
+        <style include="shared-styles">
             :host {
                 display: block;
             }
         </style>
-<vaadin-button id="fullscreen-vaadin--button" on-click="onclick">
-</vaadin-button>
-</template>
+        <vaadin-button id="fullscreen-vaadin--button" on-click="onclick">
+        </vaadin-button>
+    </template>
 
     <script>
         class FullscreenButton extends Polymer.Element {
@@ -27,11 +27,11 @@
                 };
             }
             onclick() {
-               if (this.close) {
-                   closeFullscreen();
-               } else {
-                   openFullscreen();
-               }
+                if (this.close) {
+                    closeFullscreen();
+                } else {
+                    openFullscreen();
+                }
             }
         }
         customElements.define(FullscreenButton.is, FullscreenButton);
