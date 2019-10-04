@@ -5,7 +5,7 @@
 
     <groupId>org.vaadin.olli</groupId>
     <artifactId>fullscreen</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <name>Fullscreen</name>
     <description>Fullscreen toggling for Vaadin 14</description>
 
