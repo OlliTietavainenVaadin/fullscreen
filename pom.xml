@@ -5,12 +5,12 @@
 
     <groupId>org.vaadin.olli</groupId>
     <artifactId>fullscreen</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <name>Fullscreen</name>
     <description>Fullscreen toggling for Vaadin 14</description>
 
     <properties>
-        <vaadin.version>14.0.5</vaadin.version>
+        <vaadin.version>14.8.7</vaadin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,7 +28,7 @@
     <licenses>
         <license>
             <name>Apache 2</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -47,12 +47,12 @@
     <repositories>
         <repository>
             <id>Vaadin Directory</id>
-            <url>http://maven.vaadin.com/vaadin-addons</url>
+            <url>https://maven.vaadin.com/vaadin-addons</url>
         </repository>
         <!-- Repository needed for prerelease versions of Vaadin -->
         <repository>
             <id>Vaadin prereleases</id>
-            <url>http://maven.vaadin.com/vaadin-prereleases</url>
+            <url>https://maven.vaadin.com/vaadin-prereleases</url>
         </repository>
         <!-- The bintray repository contain webjars immediately after generation. If the webjar is available
              in Maven central, you do not need this repository -->
@@ -91,15 +91,6 @@
                     <groupId>com.vaadin</groupId>
                     <artifactId>vaadin-maven-plugin</artifactId>
                     <version>${vaadin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.github.eirslett</groupId>
-                    <artifactId>frontend-maven-plugin</artifactId>
-                    <version>${frontend.maven.plugin.version}</version>
-                    <configuration>
-                        <nodeVersion>${node.version}</nodeVersion>
-                        <yarnVersion>${yarn.version}</yarnVersion>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -205,6 +196,17 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>3.1.2</version>
+                        <configuration>
+                            <!-- Generated file that shouldn't be included in add-ons -->
+                            <excludes>
+                                <exclude>META-INF/VAADIN/config/flow-build-info.json</exclude>
+                            </excludes>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
